@@ -1,0 +1,35 @@
+.header {
+    display: flex;
+    align-items: center;
+    color: aliceblue;
+
+    ul {
+        display: flex;
+        align-items: center;
+
+        .first {
+            background: rgb(126, 146, 209);
+            padding: 4px 20px;
+            border-radius: 12px;
+            align-items: center;
+        }
+
+        li {
+            margin: 12px 4px;
+            list-style-type: none;
+            cursor: pointer;
+            a{
+                text-decoration: none;
+                color: aliceblue;
+                padding: 10px;
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    h2 {
+        margin: 0 auto;
+        text-shadow: 10px 10px 10px rgb(49, 44, 44);
+        font-size: 2rem;
+    }
+}
