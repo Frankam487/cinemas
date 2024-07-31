@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import axios from "axios";
 import Card from "../components/Card";
+import  Form  from "../components/Form";
 
 const Home = () => {
     const [movies, setMovies] = useState([]);
@@ -13,6 +14,7 @@ const Home = () => {
     return (
         <div className="home">
             <Header />
+            <Form/>
             <div className="home-container">
                 {
                     movies.map((movie, index) => (
