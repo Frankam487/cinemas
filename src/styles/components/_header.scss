@@ -1,9 +1,8 @@
 .header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     color: aliceblue;
-    width: 77%;
-
     ul {
         display: flex;
         align-items: center;
@@ -29,6 +28,7 @@
     }
 
     h2 {
+        display: block;
         margin: 0 auto;
         text-shadow: 10px 10px 10px rgb(49, 44, 44);
         font-size: 2rem;
