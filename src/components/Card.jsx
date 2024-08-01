@@ -39,7 +39,8 @@ const Card = ({ movie }) => {
                         movie.genre_ids ? genreFinder() : null
                     }
                 </ul>
-                <p>{movie.overview}</p>
+                {movie.overview ? <h3>Synopsie</h3> : ""}
+                <p className="overview">{movie.overview}</p>
                 <button>Ajouter aux favories</button>
             </div>
         </div>

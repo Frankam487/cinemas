@@ -11,7 +11,7 @@ const Home = () => {
         axios.get(`https://api.themoviedb.org/3/search/movie?api_key=ed82f4c18f2964e75117c2dc65e2161d&query=${inputValue}&commlanguage=fr-FR`).then((res) =>
             setMovies(res.data.results));
     }, [inputValue]);
-    
+
     return (
         <div className="home">
             <Header />
@@ -28,6 +28,7 @@ const Home = () => {
             <div className="home-container">
                 {
                     movies
+                        .slice(0, 12)
                         .sort((a, b) => {
                             if (goodToBad === "good") {
                                 return b.popularity - a.popularity
@@ -38,7 +39,7 @@ const Home = () => {
                         .map((movie, index) => (
                             <Card key={index} movie={movie} />
                         ))
-                        .slice(0, 12)
+
                 }
             </div>
         </div>
