@@ -1,6 +1,4 @@
 const Card = ({ movie }) => {
-    console.log(movie);
-
     const dateProcess = (chaine) => {
         let newDate = new Date(chaine).toLocaleDateString("fr-FR", {
             year: "numeric",
@@ -27,8 +25,10 @@ const Card = ({ movie }) => {
     }
     const addStorage = () => {
         let storedData = window.localStorage.movies ? window.localStorage.movies.split(",") : [];
-
-            window.localStorage.movies = movie.id
+        if (!storedData.includes(movie.id.toString())) {
+            storedData.push(movie.id);
+            window.localStorage.movies = storedData;
+        }
     }
     return (
         <div className="card">
