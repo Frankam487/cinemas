@@ -25,9 +25,14 @@ const Card = ({ movie }) => {
         }
         return genreArray.map((genre, index) => <li key={index}>{genre}</li>)
     }
+    const addStorage = () => {
+        let storedData = window.localStorage.movies ? window.localStorage.movies.split(",") : [];
+
+            window.localStorage.movies = movie.id
+    }
     return (
         <div className="card">
-            <img src={"https://image.tmdb.org/t/p/original" + movie.poster_path
+            <img src={movie.poster_path ? "https://image.tmdb.org/t/p/original" + movie.poster_path : movie.poster_path
             } alt={"Photo de " + movie.title} />
             <div className="content-card">
                 <h2>{movie.original_title
@@ -41,7 +46,7 @@ const Card = ({ movie }) => {
                 </ul>
                 {movie.overview ? <h3>Synopsie</h3> : ""}
                 <p className="overview">{movie.overview}</p>
-                <button>Ajouter aux favories</button>
+                <button onClick={() => addStorage()}>Ajouter aux favories</button>
             </div>
         </div>
     );
