@@ -17,7 +17,7 @@ const Prefere = () => {
             <h2>Coup de coeur <span></span></h2>
             <div className="results">
                 <ul>
-                    <li></li>
+
                 </ul>
             </div>
         </div>

@@ -3,22 +3,24 @@
     align-items: center;
     justify-content: space-between;
     color: aliceblue;
+
     ul {
         display: flex;
         align-items: center;
 
         .first {
-            background: rgb(126, 146, 209);
+            background: rgb(124, 146, 219);
             padding: 4px 20px;
             border-radius: 12px;
             align-items: center;
         }
 
         li {
-            margin: 12px 4px;
+            margin: 12px 3.5px;
             list-style-type: none;
             cursor: pointer;
-            a{
+
+            a {
                 text-decoration: none;
                 color: aliceblue;
                 padding: 10px;
