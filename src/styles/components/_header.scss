@@ -36,3 +36,19 @@
         font-size: 2rem;
     }
 }
+.loader {
+    border: 5px solid #f3f3f3;
+    border-top: 3px solid #010507; 
+    border-bottom: 3px solid #030f18; 
+    border-radius: 50%;
+    width: 60px; 
+    height: 60px; 
+    animation: spin .8s linear infinite;
+    display: flex;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

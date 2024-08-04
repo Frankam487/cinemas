@@ -7,11 +7,11 @@ const Home = () => {
     const [movies, setMovies] = useState([]);
     const [inputValue, setInputValue] = useState("");
     const [goodToBad, setBadToGood] = useState("");
-    const [findData, setFindData] = useState(false);
+    const [findData, setFindData] = useState(true);
     useEffect(() => {
         axios.get(`https://api.themoviedb.org/3/search/movie?api_key=ed82f4c18f2964e75117c2dc65e2161d&query=${inputValue}&commlanguage=fr-FR`).then((res) => {
             setMovies(res.data.results);
-            setFindData(true);
+            setFindData(false);
         }
         );
     }, [inputValue]);
@@ -44,11 +44,12 @@ const Home = () => {
                         })
                         .map((movie, index) => (
                             <Card key={index} movie={movie} />
+
                         ))
 
                 }
             </div>
-           {findData &&  <h1>Veuillez patienter</h1>}
+                {!findData && <h1 className="loader"></h1>}
         </div>
     );
 }
