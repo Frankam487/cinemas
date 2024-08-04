@@ -7,9 +7,13 @@ const Home = () => {
     const [movies, setMovies] = useState([]);
     const [inputValue, setInputValue] = useState("");
     const [goodToBad, setBadToGood] = useState("");
+    const [findData, setFindData] = useState(false);
     useEffect(() => {
-        axios.get(`https://api.themoviedb.org/3/search/movie?api_key=ed82f4c18f2964e75117c2dc65e2161d&query=${inputValue}&commlanguage=fr-FR`).then((res) =>
-            setMovies(res.data.results));
+        axios.get(`https://api.themoviedb.org/3/search/movie?api_key=ed82f4c18f2964e75117c2dc65e2161d&query=${inputValue}&commlanguage=fr-FR`).then((res) => {
+            setMovies(res.data.results);
+            setFindData(true);
+        }
+        );
     }, [inputValue]);
 
     return (
@@ -44,6 +48,7 @@ const Home = () => {
 
                 }
             </div>
+           {findData &&  <h1>Veuillez patienter</h1>}
         </div>
     );
 }
