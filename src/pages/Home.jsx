@@ -49,7 +49,8 @@ const Home = () => {
 
                 }
             </div>
-                {!findData && <h1 className="loader"></h1>}
+            
+            {!findData && <img src="img/ok.svg" alt="" />}
         </div>
     );
 }
